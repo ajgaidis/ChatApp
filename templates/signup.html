@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main>
+    <div class="column side"></div>
+    <div class="column middle">
+        <div class="center">
+            <h2>Create an Account</h2>
+
+            <form method="POST" action="/signup">
+
+                {{ form.hidden_tag() }}
+
+                <div class="form-field">
+                    {{ form.username.label }}
+
+                    {% if form.username.errors %}
+                        {% for error in form.username.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    {% endif %}
+
+                    {{ form.username }}
+                </div>
+
+                <div class="form-field">
+                    {{ form.first_name.label }}
+
+                    {% if form.first_name.errors %}
+                        {% for error in form.first_name.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    {% endif %}
+
+                    {{ form.first_name }}
+                </div>
+
+                <div class="form-field">
+                    {{ form.last_name.label }}
+
+                    {% if form.last_name.errors %}
+                        {% for error in form.last_name.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    {% endif %}
+
+                    {{ form.last_name }}
+                </div>
+
+                <div class="form-field">
+                    {{ form.email.label }}
+
+                    {% if form.email.errors %}
+                        {% for error in form.email.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    {% endif %}
+
+                    {{ form.email }}
+                </div>
+
+                <div class="form-field">
+                    {{ form.password.label }}
+
+                    {% if form.password.errors %}
+                        {% for error in form.password.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    {% endif %}
+
+                    {{ form.password }}
+                </div>
+
+                {{ form.submit(class="btn btn-primary") }}
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock content %}
