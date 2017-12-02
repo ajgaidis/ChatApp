@@ -37,3 +37,8 @@ def insert_row_in_messages_db(users, sender, content, format, image_width=None, 
                      imageHeight, videoLength, videoSource) VALUES (?, ?, ?, ?, ?, ?, ?, ?);''',
                   (users, sender, content, format, image_width, image_height, video_length, video_source))
 
+def get_messages(username1, username2):
+    """
+    Gets all messages between two users, username1 and username2
+    """
+    raise NotImplementedError("Implement me yo!")

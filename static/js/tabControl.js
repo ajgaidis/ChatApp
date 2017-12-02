@@ -1,0 +1,3 @@
+function openChat(event, receiver) {
+
+}

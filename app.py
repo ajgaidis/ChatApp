@@ -4,9 +4,10 @@ from users_db_methods import *
 from messages_db_methods import *
 from flask_socketio import SocketIO, send, emit, join_room, leave_room, rooms, Namespace
 import re
+import os
 
 app = Flask(__name__)
-app.secret_key = "got that good good dev key"
+app.secret_key = os.environ["CHAT_APP_SECRET_KEY"]
 socketio = SocketIO(app)
 
 
